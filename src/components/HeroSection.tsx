@@ -18,6 +18,13 @@ const HeroSection = () => {
       {/* Overlay */}
       <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50" />
       
+      {/* Truck Image */}
+      <img
+        src="https://images.unsplash.com/photo-1586191582056-b7f0372a3c4a?auto=format&fit=crop&w=800"
+        alt="ZB Transportes Truck"
+        className="absolute bottom-0 right-0 w-1/3 h-auto object-contain z-10 animate-fade-in-right"
+      />
+      
       {/* Content */}
       <div className="relative h-full flex flex-col items-center justify-center text-white text-center px-4">
         <h1 className="text-5xl md:text-7xl font-bold mb-4 animate-fade-in-left">
