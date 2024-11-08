@@ -1,26 +1,31 @@
 import React from 'react';
-import { Truck, Package, Clock, Shield } from 'lucide-react';
+import { Truck, Package, Warehouse } from 'lucide-react';
+import ServiceCard from './ServiceCard';
 
 const services = [
   {
-    icon: <Truck className="w-12 h-12 text-zb-orange" />,
-    title: "Transporte Rodoviário",
-    description: "Transporte seguro e eficiente para todo o território nacional."
+    icon: Truck,
+    title: "Transporte de Grãos",
+    description: "Transporte especializado de grãos com frota moderna e rastreamento em tempo real.",
+    imageUrl: "https://images.unsplash.com/photo-1586191582056-b7f0a8c3a3c3?auto=format&fit=crop&w=800&q=80"
   },
   {
-    icon: <Package className="w-12 h-12 text-zb-orange" />,
+    icon: Package,
+    title: "Cargas Fracionadas",
+    description: "Distribuição eficiente de cargas fracionadas para todo o território nacional.",
+    imageUrl: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    icon: Warehouse,
     title: "Armazenagem",
-    description: "Estrutura completa para armazenamento e gestão de estoque."
+    description: "Armazenagem segura com controle de temperatura e umidade para seus produtos.",
+    imageUrl: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80"
   },
   {
-    icon: <Clock className="w-12 h-12 text-zb-orange" />,
-    title: "Entregas Expressas",
-    description: "Soluções rápidas para cargas urgentes e prioritárias."
-  },
-  {
-    icon: <Shield className="w-12 h-12 text-zb-orange" />,
-    title: "Carga Segura",
-    description: "Monitoramento 24h e seguro para todas as cargas."
+    icon: Truck,
+    title: "Transporte Dedicado",
+    description: "Soluções personalizadas de transporte com frota exclusiva para sua empresa.",
+    imageUrl: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80"
   }
 ];
 
@@ -36,14 +41,9 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div
               key={index}
-              className={`p-6 rounded-lg bg-white shadow-lg transform hover:scale-105 transition-all duration-300
-                ${index % 2 === 0 ? 'animate-fade-in-left' : 'animate-fade-in-right'}`}
+              className={index % 2 === 0 ? 'animate-fade-in-left' : 'animate-fade-in-right'}
             >
-              <div className="flex flex-col items-center text-center">
-                {service.icon}
-                <h3 className="text-xl font-bold mt-4 mb-2">{service.title}</h3>
-                <p className="text-gray-600">{service.description}</p>
-              </div>
+              <ServiceCard {...service} />
             </div>
           ))}
         </div>
